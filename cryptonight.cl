@@ -624,7 +624,7 @@ __kernel void JOIN(cn1,ALGO) (__global uint4 *Scratchpad, __global ulong *states
 			ulong c[2];
 
 			((uint4 *)c)[0] = Scratchpad[IDX((idx0 & MASK) >> 4)];
-			((uint4 *)c)[0] = AES_Round(AES0, AES1, AES2, AES3, ((uint4 *)c)[0], ((uint4 *)a)[0]);
+			((uint4 *)c)[0] = AES_Round_Break_AESNI(AES0, AES1, AES2, AES3, ((uint4 *)c)[0], ((uint4 *)a)[0]);
 
 			b_x ^= ((uint4 *)c)[0];
 // cryptonight_monero || cryptonight_aeon || cryptonight_ipbc || cryptonight_stellite || cryptonight_masari
